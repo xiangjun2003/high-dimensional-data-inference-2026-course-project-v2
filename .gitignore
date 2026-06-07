@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+outputs/tmp/
+.cache/
+*.log
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Build/package artifacts
+build/
+dist/
+*.egg-info/
