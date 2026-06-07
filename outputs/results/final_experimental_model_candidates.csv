@@ -1,0 +1,4 @@
+method,selected_features,train_time_sec,predict_time_sec,accuracy,balanced_accuracy,auc,f1,source,settings,nonzero_features
+Best FS: Random Forest + Random Forest (k=20),20,0.3506065410329029,0.07269408402498811,0.8916666666666667,0.8916666666666666,0.9637888888888888,0.8922056384742952,feature_selection,"{""selector"": ""Random Forest"", ""classifier"": ""Random Forest"", ""k"": 20}",
+Best PCA: RBF-SVM (PCs=5),5,0.4105687080300413,0.060701459005940706,0.835,0.835,0.9209333333333334,0.8369028006589786,pca,"{""classifier"": ""RBF-SVM"", ""components"": 5}",
+Best regularized: L1 Logistic (C=0.01),500,0.034658624965231866,0.009148666984401643,0.6316666666666667,0.6316666666666666,0.6419222222222222,0.6310517529215359,regularization_path,"{""method"": ""L1 Logistic"", ""C"": 0.01}",2.0

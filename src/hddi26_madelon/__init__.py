@@ -1,0 +1,2 @@
+"""MADELON course project package."""
+

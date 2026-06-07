@@ -1,0 +1,37 @@
+method_a,method_b,top_k,overlap_fraction
+ANOVA F-test,ANOVA F-test,20,1.0
+ANOVA F-test,Mutual Information,20,0.25
+ANOVA F-test,L1 Logistic,20,0.35
+ANOVA F-test,Random Forest,20,0.65
+ANOVA F-test,Permutation Importance,20,0.5
+ANOVA F-test,RFE,20,0.3
+Mutual Information,ANOVA F-test,20,0.25
+Mutual Information,Mutual Information,20,1.0
+Mutual Information,L1 Logistic,20,0.05
+Mutual Information,Random Forest,20,0.25
+Mutual Information,Permutation Importance,20,0.25
+Mutual Information,RFE,20,0.1
+L1 Logistic,ANOVA F-test,20,0.35
+L1 Logistic,Mutual Information,20,0.05
+L1 Logistic,L1 Logistic,20,1.0
+L1 Logistic,Random Forest,20,0.1
+L1 Logistic,Permutation Importance,20,0.1
+L1 Logistic,RFE,20,0.2
+Random Forest,ANOVA F-test,20,0.65
+Random Forest,Mutual Information,20,0.25
+Random Forest,L1 Logistic,20,0.1
+Random Forest,Random Forest,20,1.0
+Random Forest,Permutation Importance,20,0.75
+Random Forest,RFE,20,0.35
+Permutation Importance,ANOVA F-test,20,0.5
+Permutation Importance,Mutual Information,20,0.25
+Permutation Importance,L1 Logistic,20,0.1
+Permutation Importance,Random Forest,20,0.75
+Permutation Importance,Permutation Importance,20,1.0
+Permutation Importance,RFE,20,0.25
+RFE,ANOVA F-test,20,0.3
+RFE,Mutual Information,20,0.1
+RFE,L1 Logistic,20,0.2
+RFE,Random Forest,20,0.35
+RFE,Permutation Importance,20,0.25
+RFE,RFE,20,1.0

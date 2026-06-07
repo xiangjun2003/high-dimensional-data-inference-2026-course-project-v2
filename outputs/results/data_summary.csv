@@ -1,0 +1,10 @@
+item,value
+dataset,UCI MADELON
+train_samples,2000
+test_samples_official_validation,600
+features,500
+classes,2
+p_over_train_n,0.25
+missing_train,0
+missing_test,0
+random_state,26
