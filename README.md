@@ -251,6 +251,38 @@ Bootstrap 结果：
 
 错误样本在 PCA/t-SNE/UMAP 中主要位于类别混杂区域，说明模型错误不是随机分布，而与低维结构中的边界/重叠区域有关。
 
+### Advanced Extension Experiments
+
+为增强“讲义高级统计方法”的覆盖，项目新增了一个独立扩展脚本：
+
+```bash
+python scripts/run_extensions.py
+```
+
+该脚本不修改主实验入口 `scripts/run_project.py`，也不覆盖 `outputs/results` 和 `outputs/figures`。所有扩展结果单独写入：
+
+- `outputs/extensions/results/`
+- `outputs/extensions/figures/`
+
+扩展内容包括：
+
+| Extension | Course idea | Main output |
+|---|---|---|
+| A. SCAD Logistic via LLA/MM | 非凸稀疏惩罚、Beyond Lasso、BIC | `extension_A_scad_sparse_logistic.csv` |
+| B. RFF / Nyström kernel approximation | 快速核近似、显式随机特征映射 | `extension_B_kernel_approximation.csv` |
+| C. Bayesian Logistic Laplace | MAP、Hessian、posterior predictive uncertainty | `extension_C_bayesian_logistic_metrics.csv` |
+| D. EM-GMM classifier | 潜变量、EM、mixture model、BIC | `extension_D_em_gmm_bic.csv` |
+
+关键扩展结果见 [extension_summary.md](outputs/extensions/results/extension_summary.md)。
+
+![SCAD sparse path](outputs/extensions/figures/extension_A_scad_sparse_path.png)
+
+![Bayesian logistic uncertainty](outputs/extensions/figures/extension_C_bayesian_logistic_uncertainty.png)
+
+![EM-GMM BIC](outputs/extensions/figures/extension_D_em_gmm_bic.png)
+
+扩展实验的核心发现：SCAD/LLA + BIC 选择出极稀疏的 2-feature logistic model，accuracy 为 0.632；RFF/Nyström 展示了核近似在计算时间和非线性表达之间的折中；Bayesian Logistic 增加了校准、Brier score、predictive entropy 和 credible interval 分析；EM-GMM 在 PCA-5 空间中达到 accuracy 0.835、AUC 0.919，说明类别内部 latent subgroups 对 MADELON 有解释价值。
+
 ### 6. Reproducibility
 
 本项目已用本机 `llm-26-cpu` conda 环境验证。运行命令：
@@ -301,5 +333,11 @@ MADELON 更适合作为本课程项目数据集：它不会让所有模型都接
 This revised course project uses the UCI MADELON dataset to study high-dimensional feature selection, dimensionality reduction, nonlinear classification, and model stability under many irrelevant probe features.
 
 The project implements all required and optional components from the plan: PCA/t-SNE/UMAP visualization, ANOVA/MI/L1/RF/permutation/RFE feature selection, LDA/Shrinkage LDA/regularized QDA/logistic/SVM/KNN/Random Forest/Gradient Boosting/Extra Trees/MLP classifiers, feature-selection top-k experiments, PCA+k experiments, regularization paths, sample-size sensitivity, bootstrap confidence intervals, paired bootstrap comparisons, and embedding-based error analysis.
+
+An isolated extension script, `scripts/run_extensions.py`, adds course-method
+experiments without changing the main pipeline: SCAD logistic regression via
+LLA/MM, Random Fourier Features and Nyström kernel approximation, Bayesian
+logistic regression with Laplace uncertainty, and EM-GMM classifiers with BIC
+model selection. Extension outputs live under `outputs/extensions`.
 
 Key result: the best base model is Gradient Boosting with accuracy 0.755, while the best overall model is Random Forest after Random-Forest feature selection with k=20, reaching accuracy 0.892 and AUC 0.964 on the official validation split used as the final test set.

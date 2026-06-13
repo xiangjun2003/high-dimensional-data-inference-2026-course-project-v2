@@ -1,0 +1,2 @@
+method,feature_map,classifier,components,train_time_sec,accuracy,auc,f1
+Exact RBF-SVM,implicit RBF,SVC,,3.5244126670004334,0.5933333333333334,0.6307555555555555,0.5892255892255892

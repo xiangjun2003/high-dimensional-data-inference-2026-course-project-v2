@@ -1,0 +1,2 @@
+method,pca_components,gmm_components,covariance_type,bic,mean_em_lower_bound,converged,train_time_sec,accuracy,auc,f1
+Class-conditional EM-GMM,5,8,full,41138.62451777332,-9.708603840480805,True,0.15150849999918137,0.835,0.9191777777777779,0.8379705400981997
